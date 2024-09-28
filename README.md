@@ -1,4 +1,4 @@
-# Stochastic epidemiological models to test the origin and demographic impact of smallpox on Aboriginal Australians in the 18<supth</sup> Century
+# Stochastic epidemiological models to test the origin and demographic impact of smallpox on Aboriginal Australians in the 18<sup>th</sup> Century
 <img align="right" src="www/ausdensmap.jpg" width="300" style="margin-top: 20px">
 
 ## Focal manuscript
