@@ -7,24 +7,11 @@
 ## Abstract
 The impact of smallpox (variola) on Aboriginal peoples of Australia in 1789 was catastrophic and irreversible. Historically biased perspectives of the disease’s introduction and spread impede modern-day reconciliation efforts. Understanding whether the disease entered and spread from pre-colonial Makassan (Indonesian) trade along the north coast, or from the First Fleet’s arrival in south-eastern Australia is necessary to infer the likely rate of spread and magnitude of mortality. We developed stochastic, multi-patch epidemiological models, supported by historical observations of the disease, to test hypotheses regarding possible entry points, spread rate, and demographic impacts. Our models suggest that entry from south-eastern Australia was more likely, with a probability < 0.02 of reaching Sydney from a northern entry, and an unrealistic chronology. The spread of the disease was rapid, and suggests a single interaction could have resulted in the widespread impacts of the disease. Initial entry to extinction of the disease took between 1,200 and 1,400 days (< 4 years), and due to its high mortality rate, appears to have been limited to the eastern margins of Australia and along major intersecting river systems. There was a lower likelihood of transmission into semi-arid, arid, or tropical areas. We found no evidence that smallpox would have reached the central or western half of Australia. Assuming a 60% lethality based on global data, the loss of > 150,000 people would have occurred in these regions in < 4 years, more than previously proposed, but in alignment with recent projections of demographic change during that period.
 
-## <a href="https://github.com/cjabradshaw/AusIndigN/tree/main/scripts">Scripts</a>
-R code by Corey Bradshaw (<a href="http://github.com/cjabradshaw">@cjabradshaw</a>)
+## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/scripts">Scripts</a>
+-
 
-### <a href="https://github.com/cjabradshaw/AusIndigN/tree/main/scripts">base script</a>
-- <code>indigN.R</code>: includes all code used to derive estimates reported in the paper mentioned above
-
-### <a href="https://github.com/cjabradshaw/AusIndigN/tree/main/scripts/source">source functions</a>
-- <code>matrixOperators.r</code>: functions for manipulating matrices for population projections
-- <code>new_lmer_AIC_tables3.r</code>: functions to calculate information-theoretic parameters for linear models
-- <code>r.squared.r</code>: functions to calculate goodness of fit for linear models
-
-## <a href="https://github.com/cjabradshaw/AusIndigN/tree/main/data">Data</a>
-- <em>NppSahul(0-140ka_rawvalues)_Krapp2021.csv.zip</em>: hindcasted net primary production (kg C m<sup>-2</sup> year<sup>-1</sup>) for 0.5°×0.5° grid cells from 140 ka to the present for Sahul from <a href="http://doi.org/10.1038/s41597-021-01009-3">Krapp et al. (2000)</a> (unzip .csv file first)
-- <em>world2013lifetable.csv</em>: age-specific human life-table values from <a href="http://doi.org/10.1073/pnas.1410465111">Bradshaw & Brook (2014)</a>
-- <em>bindensModelOverlay.csv</em>: population estimates from <a href="https://www.ucpress.edu/books/constructing-frames-of-reference/paper">Binford (2001)</a> using R package <code>binford</code> (<a href="http://CRAN.R-project.org/package=binford">Marwick et al. 2016</a>) overlayed on carrying-capacity estimates
-
-## R libraries
-<code>sp</code>, <code>raster</code>, <code>oceanmap</code>, <code>OceanView</code>, <code>abind</code>, <code>pracma</code>, <code>binford</code>, <code>rgl</code>, <code>scatterplot3d</code>, <code>spatstat</code>, <code>spatialEco</code>, <code>SpatialPack</code>, <code>performance</code>, <code>sjPlot</code>, <code>dismo</code>, <code>gbm</code>, <code>truncnorm</code>, <code>bootstrap</code>
+## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/data">Data</a>
+- 
 
 ### Acknowledgements
 The authors acknowledge the sovereign Traditional Owners and custodians (First Nations) of the unceded lands and seas where we live and work, including <a href="https://www.gujaga.org.au/faq">Bidiagal</a> in Sydney (A.N.W., N.P.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Kamay/Botany Bay (K.B., S.I.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Woolungah/Wollongong (F.S.), <a href="https://www.melbourne.vic.gov.au/aboriginal-melbourne">Kulin</a> Nation in Naarm/Melbourne (B.G., I.J.M., L.R.), <a href="https://dawulwuru.com.au/">Yirrganydji</a> and <a href="https://www.yidinji.com/">Gimuy Walubara Yidinji</a> in Gimuy/Cairns (S.U., M.I.B.), <a href="https://www.ngunnawal.org/who-we-are">Ngunnawal</a> and <a href="https://www.nma.gov.au/learn/encounters-education/community-stories/canberra">Ngambri</a> in Galambary/Canberra (R.T.), <a href="https://ngarrindjeri.com.au/">Ngarrindjeri</a> of Murrundi/lower Murray River, Kurangk/Coorong, and eastern Fleurieu Peninsula (C.W.), <a href="https://tacinc.com.au/">Palawa</a> in Nipaluna/Hobart, lutruwitra/Tasmania (C.W.), <a href="https://www.kaurnawarra.org.au/kaurna-people">Kaurna</a> in Tarndanya/Adelaide (C.J.A.B., M.C.N., F.S.), and <a href="https://www.facebook.com/peramangkgovernancecouncil/">Peramangk</a> in Bukatila/Mount Lofty Ranges (C.J.A.B.). The authors also acknowledge and recognise the deep historical and cultural harm our truth-telling exposes, and we commiserate sincerely with all First Nations peoples of Australia.
