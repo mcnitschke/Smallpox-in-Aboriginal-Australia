@@ -1,1 +1,16 @@
+Readme for Stochastic Disease Model
+Created 8 October 2024
 
+Main Script to run is OneStage.m.  
+
+Functions within main script:
+- Movement1Stage.m -- file that simulates movement between neighbouring patches.
+- Spread_beta.m -- file that simulates the disease spread through contact within each patch (S->E).
+- RecoverDeath.m -- file that simulates the other stages of disese (E->I, I->R).
+
+Data needed to run the main script:
+- Populations.mat -- Projected population vector for each patch (1x592).
+- Q.mat -- Conditional probability of movement to each neighbouring patch (sum for each patch = 1).  
+- Tindale.mat -- Provides area for each patch based on Tindale map (1940).
+
+To run, set initial contition for E0(starting patch {1,...,592}) = number of initial exposed individuals.
