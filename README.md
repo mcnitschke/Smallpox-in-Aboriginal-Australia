@@ -15,7 +15,7 @@ The impact of smallpox (variola) on Aboriginal peoples of Australia in 1789 was 
 - <code>Spread_beta.m</code>: simulates disease spread through contact within each patch (susceptible to exposed S → E)
 - <code>RecoverDeath_beta.m</code>: simulates the other stages of the disease (exposed to infected E → I, and infected to recovered I → R)
 - <code>ABM1StageC.m</code>: simplified global model (no age structure, 4 disease stages)
-- <code>OneStage_5_3.m</code>:
+- <code>OneStage_5_3.m</code>: simplified global model (no age structure, 1 disease stages)
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/data">Data</a>
 - <em>Populations.mat</em>: projected population vector for each patch (1×592)
