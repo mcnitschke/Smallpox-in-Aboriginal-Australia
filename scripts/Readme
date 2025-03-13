@@ -2,7 +2,9 @@ Readme for Stochastic Disease Model
 Created 8 October 2024
 Updated 13 March 2025
 
-Main Script to run in Matlab is Full_Model.m.  Spread   
+Main Script to run in Matlab is Full_Model.m.  Spread uses the Stochastic Simulation Algorithm (Gillespie)
+to simulate exposure events.  An adaptive tau-leaping approximation us used to optimize this process. Within  
+Full_Model, choose the intial patch and the number of inital exposures: E0(patch) = number of exposures.
 
 Functions within main script:
 - Middle.m -- Primary working file with main time loop...each subsequent file run inside this file.
