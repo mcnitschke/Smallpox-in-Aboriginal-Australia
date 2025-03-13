@@ -11,15 +11,16 @@ The impact of smallpox (variola) on Aboriginal peoples of Australia in 1789 was 
 - main script: <code>OneStage.m</code>
 
 ### Functions within main script
-- <code>Movement1Stage.m</code>: simulates movement between neighbouring patches
-- <code>Spread_beta.m</code>: simulates disease spread through contact within each patch (susceptible to exposed S → E)
-- <code>RecoverDeath_beta.m</code>: simulates the other stages of the disease (exposed to infected E → I, and infected to recovered I → R)
-- <code>ABM1StageC.m</code>: simplified global model (no age structure, 4 disease stages, 1 infectious stage)
-- <code>OneStage_5_3.m</code>: simplified global model (sets parameters and initial conditions)
+- <code>Movement.m</code>: simulates movement between neighbouring patches
+- <code>Spread.m</code>: simulates disease spread through contact within each patch (susceptible to exposed S → E)
+- <code>adaptive_tau.m</code>: adaptively chooses tau for tau-leap that optimizes spread (within Spread.m function)
+- <code>RecoverDeath.m</code>: simulates the other stages of the disease (exposed to infected E → I, and infected to recovered I → R)
+- <code>Middle.m</code>: simplified global model (no age structure, 4 disease stages, 1 infectious stage)
+- <code>Full_Model.m</code>: simplified global model (sets parameters and initial conditions)
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/data">Data</a>
-- <em>Populations.mat</em>: projected population vector for each patch (1×592)
-- <em>Q.mat</em>: conditional probability of movement to each neighbouring patch (∑ for each patch = 1).  
+- <em>Population_Estimate.mat</em>: projected population vector for each patch (1×592)
+- <em>Q_Estimate.mat</em>: conditional probability of movement to each neighbouring patch (∑ for each patch = 1).  
 - <em>Tindale.mat</em>: area for each patch based on <a href="https://catalogue.nla.gov.au/catalog/2753275">Tindale (1974)</a> map
 
 ### Acknowledgements
