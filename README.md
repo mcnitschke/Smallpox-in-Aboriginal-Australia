@@ -23,8 +23,8 @@ The impact of smallpox (variola) on Aboriginal communities in Australia beginnin
 - <code>Middle.m</code>: simplified global model (no age structure, 4 disease stages, 1 infectious stage)
 - <code>Full_Model.m</code>: simplified global model (sets parameters and initial conditions)
 
-## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/scripts">Fortran version</a>
-- <code>Movement.m</code>: simulates movement between neighbouring patches
+## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/Fortran code">Fortran version</a>
+- <code>Patch 5 SEIR</code>: Fortran version of Matlab code for faster processing
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/data">Data</a>
 - <em>Population_Estimate.mat</em>: projected population vector for each patch (1×592)
