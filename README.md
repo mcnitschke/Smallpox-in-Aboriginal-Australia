@@ -24,12 +24,12 @@ The impact of smallpox (variola) on Aboriginal communities in Australia beginnin
 - <code>Full_Model.m</code>: simplified global model (sets parameters and initial conditions)
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/Fortran code">Fortran version</a>
-- <code>Patch 5 SEIR</code>: Fortran version of Matlab code for faster processing
-
-## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/data">Data</a>
-- <em>Population_Estimate.mat</em>: projected population vector for each patch (1×592)
-- <em>Q_Estimate.mat</em>: conditional probability of movement to each neighbouring patch (∑ for each patch = 1).  
-- <em>Tindale.mat</em>: area for each patch based on <a href="https://catalogue.nla.gov.au/catalog/2753275">Tindale (1974)</a> map
+- <code>Pox_patch_518A.f90</code>: Fortran 90 version of Matlab code for faster processing
+- <code>Areas.txt</code>: Areas of each patch 
+- <code>Coordinates.txt</code>: Coordinates of the center of each patch
+- <code>PatchProbs.txt</code>: Probability assigned to each patch for non nearest-neighbour movement
+- <code>Populations.txt</code>: Population of each patch for initial movement probability
+- <code>Q.txt</code>: an MxM matrix whose entry Q(i,j) represents the baseline probability of moving from patch i to patch j
 
 ### Acknowledgements
 We acknowledge the sovereign Traditional Owners and custodians (First Nations) of the unceded lands and seas where we live and work, including <a href="https://www.kaurnawarra.org.au/kaurna-people">Kaurna</a> in Tarndanya/Adelaide (M.C.N., C.J.A.B., F.S., S.H.F.), <a href="https://www.gujaga.org.au/faq">Bidiagal</a> in Warrane/Sydney (A.N.W., N.P., J.R.H., A.B.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Kamay/Botany Bay (K.B., S.D.I.), <a href="https://www.melbourne.vic.gov.au/aboriginal-melbourne">Kulin</a> Nation in Naarm/Melbourne (B.G., I.J.M., L.R.), <a href="https://dawulwuru.com.au/">Yirrganydji</a> and <a href="https://www.yidinji.com/">Gimuy Walubara Yidinji</a> in Gimuy/Cairns (S.U., M.I.B.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Woolungah/Wollongong (F.S.), <a href="https://ngarrindjeri.com.au/">Ngarrindjeri</a> of Murrundi/lower Murray River, Kurangk/Coorong, and eastern Fleurieu Peninsula (C.W.), <a href="https://tacinc.com.au/">Palawa</a> in Nipaluna/Hobart, lutruwitra/Tasmania (C.W.), and <a href="https://www.facebook.com/peramangkgovernancecouncil/">Peramangk</a> in Bukatila/Mount Lofty Ranges (C.J.A.B.). We also recognise the deep historical and cultural harm our truth-telling exposes, and we commiserate with all First Nations peoples of Australia. We thank <a href="https://globalecologyflinders.com/people/#JL">J. Llewelyn</a> for initial discussions.
