@@ -66,7 +66,7 @@ out_5 = mu(5,:); % move out rate --I4
     MuRho5(:,:)=MuRho5(:,:)-diag(diag(MuRho5))+diag([out_5]);  
     TE = 0;
 for t =1:L
-
+t
  [S,E,I,R,TE]=Spread(S,E,I,R,TE,Amat,dt,Bmat);
 
  [S,E,I,R] = RecoverDeath(S,E,I,R,alpha,gamma);
