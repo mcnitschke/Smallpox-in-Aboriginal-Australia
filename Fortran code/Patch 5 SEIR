@@ -219,19 +219,6 @@ close(99)
 
       do k = 1, L
 
-! CLOCK CHECK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      if (mod(k,1000) ==0) then
-        call SYSTEM_CLOCK(current_clock)
-
-        elapsed_time_seconds= real(current_clock - start_clock)/real(clock_rate)
-        print *,"elapsed_time_seconds", elapsed_time_seconds
-
-        if (elapsed_time_seconds > 1123200) then
-          exit
-        end if
-      end if
-! CLOCK CHECK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
         mu = max(mu_bar*(1+A1*sin((2*pi*k)/T)),0.0)
         rho = max(rho_bar*(1+A2*sin((2*pi*k)/T)),0.0)
         MuRho = move_matrix(M,mu,rho)
