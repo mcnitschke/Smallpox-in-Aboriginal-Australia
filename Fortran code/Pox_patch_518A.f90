@@ -82,7 +82,6 @@ program MainABM
   bvec = [1, 2]
   rhovec = [1.0/5.0, 1.0/14.0]                              !~1/days 
   alpha = 1.0 - exp(-1.0/12.0)                              !~12 days
-  delta = 1.0 - (1.0 - 0.6)**(1.0/13.0)                     !~13 days, 60% die
   gamma = 1.0 - exp(-1.0/18.0)                              !~18 days
   epsilonvec = [0.0, 0.01, 0.05, 0.1]
   lambdavec = [0.08, 0.1]
@@ -95,7 +94,6 @@ program MainABM
   !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   ! Simulation loop for different parameter sets (bvec and avec)
-  call SYSTEM_CLOCK(start_clock, clock_rate)
 
   kk = 1
 
@@ -105,10 +103,7 @@ program MainABM
   epsilonloop = 1
   lambdaloop = 1
 
-  !do rloop = 1, size(rhovec)
   rho_bar = 1 - EXP(-rhovec(rloop))
-  !do bloop = 1, size(bvec)  ! Change to loop over other parameter sets if needed
-    !do aloop = 1, size(avec)  ! Adjust for other parameter combinations
 
 H_trade    = f_trade    * Population / ss
 H_ceremony = f_ceremony * Population / ss
@@ -117,41 +112,26 @@ T_trade    = avec(aloop) * H_trade**nu
 T_ceremony = bvec(bloop) * H_ceremony**nu
 
 mu_vec = (1.0 / 365.0) * (T_trade / Population) + (1.0 / 730.0) * (T_ceremony / Population)
-
 mu_bar = 1 - EXP(-mu_vec)
-
-!do epsilonloop = 1,size(epsilonvec)
-  !do lambdaloop = 1,size(lambdavec)
 
 epsilon = epsilonvec(epsilonloop)
 lambda  = lambdavec(lambdaloop)
 
 Q_new = DistanceDecay(Q, Coordinates, lambda, epsilon, M, PatchProbs)
 
-
 open(unit=99, file="Q_row_209.txt")
 write(99,*) Q_new(209, :)
 close(99)
 
-
       call ABM_sub(S,E,I,R,D,NR,E0,A,M,L,mu_bar,rho_bar,alpha,gamma,beta,Q_new,Population,f,&
     p_bar_r,p_bar_v,step,total_steps,IPP,Total_unique_E,TT,I_Tally)
-
-      
+     
       Total_E_All(kk,:) = Total_unique_E
       Total_I_Tally(:,:,kk) = I_Tally
       Epi_Times(kk,:)   = TT
       Total_IPP(:,:,kk) = IPP
 
       kk = kk + 1
-
-    !end do
-  !end do
-
-  !end do
-
-    !end do !lambda loop
-  !end do ! epsilon loop
 
   call save_4D_arrays(M,NR,total_steps,parameters,Total_IPP,Epi_Times,Total_I_Tally)
 
@@ -186,7 +166,7 @@ close(99)
     integer :: TR,TI,TD,T, A1, A2, A3, A4
 
     PD = 1 - EXP(-dd)              !Probability of a death -- dd is death rate
-    PC = 0.0001098            !Probability of conception -- 0.5 female|1/30 f window|1/365
+    PC = 0.0001098                 !Probability of conception -- 0.5 female|1/30 f window|1/365
     alpha_mat = alpha
     gamma_mat = gamma
     delta_mat = delta
@@ -218,19 +198,6 @@ close(99)
       counter = 1
 
       do k = 1, L
-
-! CLOCK CHECK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      if (mod(k,1000) ==0) then
-        call SYSTEM_CLOCK(current_clock)
-
-        elapsed_time_seconds= real(current_clock - start_clock)/real(clock_rate)
-        print *,"elapsed_time_seconds", elapsed_time_seconds
-
-        if (elapsed_time_seconds > 1123200) then
-          exit
-        end if
-      end if
-! CLOCK CHECK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         mu = max(mu_bar*(1+A1*sin((2*pi*k)/T)),0.0)
         rho = max(rho_bar*(1+A2*sin((2*pi*k)/T)),0.0)
