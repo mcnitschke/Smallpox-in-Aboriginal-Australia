@@ -82,7 +82,6 @@ program MainABM
   bvec = [1, 2]
   rhovec = [1.0/5.0, 1.0/14.0]                              !~1/days 
   alpha = 1.0 - exp(-1.0/12.0)                              !~12 days
-  delta = 1.0 - (1.0 - 0.6)**(1.0/13.0)                     !~13 days, 60% die
   gamma = 1.0 - exp(-1.0/18.0)                              !~18 days
   epsilonvec = [0.0, 0.01, 0.05, 0.1]
   lambdavec = [0.08, 0.1]
