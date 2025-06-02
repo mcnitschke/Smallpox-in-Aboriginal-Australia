@@ -1,0 +1,26 @@
+The intial patch can be adjusted, in this example initial_patch=518, with a single exposed individual.
+L = 1000 (adjustable time horizon)
+NR = 1   (adjustable number of realisations)
+M = 592  (adjustable total number of patches)
+
+Adjustable Model Parameters:
+avec = [3,8,12]  (vector of possible a values)
+bvec = [1,2]     (vector of possible b values)
+rhovec=[1/5,1/14](vector of possible rho values)
+epsilonvec = [0,0.01,0.05,0.1] (vector of possible epsilon values)
+lambdavec = [0.08,0.1] (vector of possible lambda values)
+beta = 0.334 (beta contact value.....this is set for R0 = 6)
+ss = 6 (size of each household)
+f_trade = 0.25 (frequency of movement for trade)
+f_ceremony (frequency of movement for ceremony)
+nu = sacaling parameter
+
+Capable of looping through above vectors, but this example just fixes these values, reducing the number of loops.
+
+Output files:
+All output is saved in binary format to minimize size
+
+518A_Epi_Lengths.bin  - 1D array of epidemic length for each realization
+518A_I_Tally.bin - 4D array of total I for each patch at each time step
+518A_Total_IPP.bin - 2D array of total I for each patch over full epidemic (I Per Patch)
+518A_Unique_E.bin - 1D array of total unique exposed individuals over full epidemic (per patch)
