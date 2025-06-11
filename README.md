@@ -19,7 +19,7 @@ The impact of smallpox (variola) on Aboriginal communities in Australia beginnin
 - <code>Movement.m</code>: simulates movement between neighbouring patches
 - <code>Spread.m</code>: simulates disease spread through contact within each patch (susceptible to exposed S → E)
 - <code>adaptive_tau.m</code>: adaptively chooses tau for tau-leap that optimizes spread (within Spread.m function)
-- <code>DistanceDecay.m</code>: determine probabilities of moving to non-adjacent patches that decays with distance
+- <code>DistanceDecay.m</code>: determine probabilities of moving to non-adjacent patches that decays with distance (here, $\epsilon=0$)
 - <code>RecoverDeath.m</code>: simulates the other stages of the disease (exposed to infected E → I, and infected to recovered I → R)
 - <code>Middle.m</code>: simplified global model (no age structure, 4 disease stages, 1 infectious stage)
 
