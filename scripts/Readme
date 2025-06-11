@@ -22,5 +22,8 @@ Data needed to run the main script:
 To run, set initial contition for E0(starting patch {1,...,592}) = number of initial exposed individuals.
 
 Expected output:
+- TI -- vector of total I individuals per day ~(1 x total time steps)
 - MeanTIMatrix -- collection of total number of infectious individuals each time step
-- FrequencyPP -- 
+- TNumPatches -- vector of total number of patches with at least 1 infected individual ~ (1 x total time steps)
+- TimeEnd -- total length of the simulated epidemic
+- TotalUniqueE -- Total number of unique exposed individuals
