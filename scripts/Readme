@@ -17,5 +17,10 @@ Data needed to run the main script:
 - Population_Estimate.mat -- Projected population vector for each patch (1x592).
 - Q_Estimate.mat -- Conditional probability of movement to each neighbouring patch (sum for each patch = 1).  
 - Tindale.mat -- Provides area for each patch based on Tindale map (1940).
+- PatchProbs.mat -- Probability associated to each patch for movement (1x592).
 
 To run, set initial contition for E0(starting patch {1,...,592}) = number of initial exposed individuals.
+
+Expected output:
+- MeanTIMatrix -- collection of total number of infectious individuals each time step
+- FrequencyPP -- 
