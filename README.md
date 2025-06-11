@@ -13,7 +13,7 @@ see also (now out-of-date) pre-print:<br>
 The impact of smallpox (variola) on Aboriginal communities in Australia beginning in 1789 was catastrophic and continues to cause intergenerational trauma. Historically biased perspectives and contemporary misinformation of the disease’s introduction and spread impedemodern-day truth-telling and subsequent reconciliation and national healing. Understanding whether the disease entered and spread from pre-colonial Makassan (Indonesian) trade along the northern coast, or from the First Fleet’s arrival in south-eastern Australia in 1788, is necessary to estimate demographic impact. We developed stochastic, multi-patch epidemiological models supported by systematic evaluation of historical observations to test hypotheses regarding possible disease entry points, spread rate, and demographic impacts. Our models confirm that entry of the disease was in south-eastern Australia. Even under ideal conditions and with higher-than-probable infection rates, simulations show that smallpox was unlikely to reach Sydney from a northern entry. Due to a high mortality rate, the epidemic appears to have been limited to the south-eastern coastal margins of Australia and along major intersecting river systems such as the Murray and Lachlan Rivers. There is no evidence that the 1789 epidemic was Australia-wide. Assuming a 60% lethality based on global data, the loss of 40,000–240,000 people would have occurred in these regions. While catastrophic to traditional Indigenous lifeways in the southeast, the disease also provided the catalyst for population decline andmarginalisation of Indigenous people in the face of expanding European populations. It seems unlikely that other parts of Australia were affected by the initial epidemic, and we recommend revisiting previous assumptions of the subsequent impacts to Indigenous societies by other diseases and frontier violence. We warn readers that the content of this study is confronting and possibly distressing.
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/scripts">Scripts</a> (Matlab)
-- main script: <code>OneStage.m</code>
+- main script: <code>Full_Model.m</code>: simplified global model (sets parameters and initial conditions)
 
 ### Functions within main script
 - <code>Movement.m</code>: simulates movement between neighbouring patches
@@ -21,7 +21,7 @@ The impact of smallpox (variola) on Aboriginal communities in Australia beginnin
 - <code>adaptive_tau.m</code>: adaptively chooses tau for tau-leap that optimizes spread (within Spread.m function)
 - <code>RecoverDeath.m</code>: simulates the other stages of the disease (exposed to infected E → I, and infected to recovered I → R)
 - <code>Middle.m</code>: simplified global model (no age structure, 4 disease stages, 1 infectious stage)
-- <code>Full_Model.m</code>: simplified global model (sets parameters and initial conditions)
+
 
 ## <a href="https://github.com/mcnitschke/Smallpox-in-Aboriginal-Australia/tree/main/Fortran code">Fortran version</a>
 - <code>Pox_patch_518A.f90</code>: Fortran 90 version of Matlab code for faster processing
@@ -30,6 +30,17 @@ The impact of smallpox (variola) on Aboriginal communities in Australia beginnin
 - <code>PatchProbs.txt</code>: Probability assigned to each patch for non nearest-neighbour movement
 - <code>Populations.txt</code>: Population of each patch for initial movement probability
 - <code>Q.txt</code>: an M×M matrix whose entry <em>Q</em>(<em>i</em>,<em>j</em>) represents the baseline probability of moving from patch <em>i</em> to patch <em>j</em>
+
+## System Requirements
+The code we used requires only a standard computer with enough RAM to support the in-memory operations.  Both programs were tested on the following systems:
+
+- Mac OS Sonoma 14.7.4
+- Deep Thought HPC cluster at Flinders University (AMD EPYC 7551 CPUs, 32 cores/256 GB RAM per node; RHEL 7.6 with Slurm 21.08)
+
+## Installation Guide
+This project requires only MATLAB R2023b (no additional toolboxes). After cloning or downloading the repository, open MATLAB, navigate to the project root directory, and run the installer by typing install. This command adds all subfolders to your MATLAB path and creates the data/ directory.  On a typical desktop computer, the download of the MATLAB installer may take approximately 10 minutes, depending on the internet speed.  Once the installer has been downloaded and you launch it, the installation and post-installation usually is complete in 15-30 minutes.  
+
+A Fortran 90 compiler is typically pre-installed on most computers. After cloning or downloading the repository in a specified directory, navigate to the terminal window on your computer.  Once inside the proper directory, run the command gfortran -o Pox Pox_patch_518A.f90, which will create the executable file, called Pox.  To run this file, type "./Pox" and enter.
 
 ### Acknowledgements
 We acknowledge the sovereign Traditional Owners and custodians (First Nations) of the unceded lands and seas where we live and work, including <a href="https://www.kaurnawarra.org.au/kaurna-people">Kaurna</a> in Tarndanya/Adelaide (M.C.N., C.J.A.B., F.S., S.H.F.), <a href="https://www.gujaga.org.au/faq">Bidiagal</a> in Warrane/Sydney (A.N.W., N.P., J.R.H., A.B.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Kamay/Botany Bay (K.B., S.D.I.), <a href="https://www.melbourne.vic.gov.au/aboriginal-melbourne">Kulin</a> Nation in Naarm/Melbourne (B.G., I.J.M., L.R.), <a href="https://dawulwuru.com.au/">Yirrganydji</a> and <a href="https://www.yidinji.com/">Gimuy Walubara Yidinji</a> in Gimuy/Cairns (S.U., M.I.B.), <a href="https://www.sutherlandshire.nsw.gov.au/play-and-explore/local-history-and-heritage/local-history">Dharawal</a> in Woolungah/Wollongong (F.S.), <a href="https://ngarrindjeri.com.au/">Ngarrindjeri</a> of Murrundi/lower Murray River, Kurangk/Coorong, and eastern Fleurieu Peninsula (C.W.), <a href="https://tacinc.com.au/">Palawa</a> in Nipaluna/Hobart, lutruwitra/Tasmania (C.W.), and <a href="https://www.facebook.com/peramangkgovernancecouncil/">Peramangk</a> in Bukatila/Mount Lofty Ranges (C.J.A.B.). We also recognise the deep historical and cultural harm our truth-telling exposes, and we commiserate with all First Nations peoples of Australia. We thank <a href="https://globalecologyflinders.com/people/#JL">J. Llewelyn</a> for initial discussions.
