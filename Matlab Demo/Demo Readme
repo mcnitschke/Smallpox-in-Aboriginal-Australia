@@ -1,0 +1,11 @@
+Small_Example.m is a small demo that includes only 4 patches corresponding to patches 512,518,523 and 527 in the full model.
+
+Run the main program "Small_Example.m" in MATLAB.
+
+The main program calls "Middle_Example".
+Middle_Example calls on Spread, RecoverDeath and Movement.
+
+Expected Output:
+ - A graph of the total daily numbers in compartments E,I,R for all 4 patches combined.
+ - A graph of the total number of patches affected as a function of the time step (1 day).
+
