@@ -5,6 +5,13 @@ Run the main program "Small_Example.m" in MATLAB.
 The main program calls "Middle_Example".
 Middle_Example calls on Spread, RecoverDeath and Movement.
 
+Data Files Loaded:
+- A.mat -- areas of each patch
+- Coordinates.mat -- latitude and longitude of each patch
+- Preference.mat -- vector of probabilities for each patch
+- Populations.mat -- vector of populations of each patch 
+- Q_small -- 4x4 matrix of each patch and preferred directions
+
 Expected Output:
  - A graph of the total daily numbers in compartments E,I,R for all 4 patches combined.
  - A graph of the total number of patches affected as a function of the time step (1 day).
